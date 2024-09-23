@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daonation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-[#F9F7F3] pt-4 pb-8 sticky top-0 z-10">
+      <div class="navbar container mx-auto gap-2">
+        <div class="navbar-start">
+          <div class="dropdown hidden">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+          </div>
+          <button
+            id="btn-home"
+            class="btn bg-lime-300 px-8 hover:bg-lime-400 text-black font-semibold text-xl"
+          >
+            Home
+          </button>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <div class="flex gap-2 items-center">
+            <img src="images/logo.png" alt="" />
+            <h1 class="text-black font-semibold text-md sm:text-xl">
+              Donate Bangladesh
+            </h1>
+          </div>
+        </div>
+        <div class="navbar-end">
+          <div class="flex items-center gap-2">
+            <img src="images/coin.png" alt="" />
+            <h1 id="main-balance" class="font-medium text-xl text-gray-500">
+              5500
+            </h1>
+            <h1 class="font-medium text-xl text-gray-500">BDT</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto">
+      <!-- faq section -->
+      <section class="mx-2 py-12">
+        <h1 class="font-bold text-4xl text-black mb-8">IMPORTENT FAQ</h1>
+
+        <div>
+          <div class="join join-vertical w-full">
+            <div
+              class="collapse collapse-arrow join-item border-base-300 border"
+            >
+              <input type="radio" name="my-accordion-4" checked="checked" />
+              <div class="collapse-title text-xl font-medium">
+                What is the Document Object Model (DOM)?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  The DOM is a tree-structured representation of HTML, XML, and
+                  other documents. It provides a way to access and manipulate
+                  these documents programmatically.
+                </p>
+              </div>
+            </div>
+            <div
+              class="collapse collapse-arrow join-item border-base-300 border"
+            >
+              <input type="radio" name="my-accordion-4" />
+              <div class="collapse-title text-xl font-medium">
+                How do you select an element from the DOM?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  The DOM provides methods to select elements by ID, class name,
+                  tag name, or CSS selector. For example, you can use
+                  getElementById, getElementsByClassName, getElementsByTagName,
+                  querySelector, and querySelectorAll to find specific elements
+                  in your document.
+                </p>
+              </div>
+            </div>
+            <div
+              class="collapse collapse-arrow join-item border-base-300 border"
+            >
+              <input type="radio" name="my-accordion-4" />
+              <div class="collapse-title text-xl font-medium">
+                What is event delegation in the context of the DOM, and whay is
+                it useful?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  Event delegation attaches a single event handler to a parent
+                  element, handling events that bubble up from its children.
+                  This is more efficient and simplifies code, especially for
+                  dynamic content.
+                </p>
+              </div>
+            </div>
+            <div
+              class="collapse collapse-arrow join-item border-base-300 border"
+            >
+              <input type="radio" name="my-accordion-4" />
+              <div class="collapse-title text-xl font-medium">
+                How do you manipulate an element's attributes and styles using
+                the DOM?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  To manipulate attributes, use getAttribute and setAttribute.
+                  To manipulate styles, use style property or classList.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#F9F7F3] h-28 mt-10"></footer>
+
+    <!-- modal section start -->
+    <section
+      id="modal-section"
+      class="bg-black bg-opacity-30 w-full h-full top-2/4 left-2/4 -translate-y-1/2 -translate-x-1/2 z-50 fixed hidden"
+    >
+      <div class="flex justify-center items-center min-h-screen">
+        <div
+          class="bg-white p-5 sm:p-10 w-full sm:w-[650px] md:w-[700px] text-center rounded-xl mx-2"
+        >
+          <h1 class="text-2xl sm:text-5xl text-gray-900 font-extrabold mb-5">
+            Congrates
+          </h1>
+          <img class="m-auto" src="images/coin.png" alt="" />
+          <p class="mt-7 text-gray-700 capitalize font-medium">
+            you have donate for humankind
+          </p>
+          <h3 class="capitalize text-gray-900 font-bold text-xl my-3">
+            successfully
+          </h3>
+          <button id="btn-modal" class="btn bg-gray-100 hover:bg-lime-400">
+            close confirmation
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- modal section start end-->
+
+    <script>
+      document
+        .getElementById("btn-home")
+        .addEventListener("click", function () {
+          window.location.href = "/index.html";
+        });
+    </script>
+  </body>
+</html>
