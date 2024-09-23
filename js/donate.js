@@ -7,12 +7,16 @@ document.getElementById('btn-donate-one')
         const mainBalance = getTextValueById('main-balance');
 
         //card balance add
-        if (addMoney > 0 && mainBalance >= addMoney) {
+        if (addMoney < 0) {
+            alert('Insert Possitive Value');
+        }
+        else if (addMoney > 0 && mainBalance >= addMoney) {
             const totalDonateId = parseFloat(document.getElementById('total-donate-id-one').innerText);
             const addBalance = addMoney + totalDonateId;
             const updateBalance = mainBalance - addMoney;
             document.getElementById('total-donate-id-one').innerText = addBalance.toFixed(2);
             document.getElementById('main-balance').innerText = updateBalance.toFixed(2);
+            document.getElementById('modal-section').classList.remove('hidden');
 
             // history add
             const historyItems = document.createElement('div');
@@ -42,12 +46,16 @@ document.getElementById('btn-donate-two')
         const mainBalance = getTextValueById('main-balance');
         console.log(mainBalance)
         //card balance add
-        if (addMoney > 0 && mainBalance >= addMoney) {
+        if (addMoney < 0) {
+            alert('Insert Possitive Value');
+        }
+        else if (addMoney > 0 && mainBalance >= addMoney) {
             const totalDonateId = parseFloat(document.getElementById('total-donate-id-two').innerText);
             const addBalance = addMoney + totalDonateId;
             const updateBalance = mainBalance - addMoney;
             document.getElementById('total-donate-id-two').innerText = addBalance.toFixed(2);
             document.getElementById('main-balance').innerText = updateBalance.toFixed(2);
+            document.getElementById('modal-section').classList.remove('hidden');
 
             // history add
             const historyItems = document.createElement('div');
@@ -61,7 +69,7 @@ document.getElementById('btn-donate-two')
 
         }
         else {
-            alert("Don't have enough balance")
+            alert("Don't have enough balance");
         }
 
     })
@@ -76,12 +84,16 @@ document.getElementById('btn-donate-three')
         const mainBalance = getTextValueById('main-balance');
         console.log(mainBalance)
         //card balance add
-        if (addMoney > 0 && mainBalance >= addMoney) {
+        if (addMoney < 0) {
+            alert('Insert Possitive Value');
+        }
+        else if (addMoney > 0 && mainBalance >= addMoney) {
             const totalDonateId = parseFloat(document.getElementById('total-donate-id-three').innerText);
             const addBalance = addMoney + totalDonateId;
             const updateBalance = mainBalance - addMoney;
             document.getElementById('total-donate-id-three').innerText = addBalance.toFixed(2);
             document.getElementById('main-balance').innerText = updateBalance.toFixed(2);
+            document.getElementById('modal-section').classList.remove('hidden');
 
             // history add
             const historyItems = document.createElement('div');
