@@ -115,5 +115,5 @@ document.getElementById('btn-donate-three')
 //  change directory faq page
     document.getElementById('btn-blog-link')
     .addEventListener('click', function () {
-       window.location.href = "../faq.html";
+       window.location.href = "faq.html";
     })
